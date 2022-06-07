@@ -1,6 +1,7 @@
 import { Toaster } from 'react-hot-toast';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Applications from './components/Applications';
 import Form from './components/Form';
 import Header from './components/Header';
 import Home from './components/Home';
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/loan-apply' element={<Form></Form>}></Route>
+          <Route path='/applications' element={<Applications></Applications>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/register' element={<Register></Register>}></Route>
         </Routes>

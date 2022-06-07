@@ -8,7 +8,7 @@ const Home = () => {
             <h2>Welcome to GET A LOAN</h2>
             <div className='mt-4'>
                 <button onClick={() => navigate('/loan-apply')} className='btn-get'>Get a Loan</button>
-                <button onClick={() => navigate('/applied-loan')} className='btn-view'>Applied Loan</button>
+                <button onClick={() => navigate('/applications')} className='btn-view'>Applied Loan</button>
             </div>
         </div>
     );
