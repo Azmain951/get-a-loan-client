@@ -5,7 +5,7 @@ const Application = ({ index, application }) => {
     const { _id, firstName, lastName, email, phone, address, companyName, companyAddress, loanAmount, tenure, status } = application;
 
     const handleAccept = () => {
-        fetch(`http://localhost:5000/loan/${_id}`, {
+        fetch(`https://morning-dusk-41374.herokuapp.com/loan/${_id}`, {
             method: "PATCH"
         })
             .then(res => res.json())
@@ -15,7 +15,7 @@ const Application = ({ index, application }) => {
     }
 
     const handleReject = () => {
-        fetch(`http://localhost:5000/loan/${_id}`, {
+        fetch(`https://morning-dusk-41374.herokuapp.com/loan/${_id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
