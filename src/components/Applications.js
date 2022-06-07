@@ -5,7 +5,7 @@ const Applications = () => {
 
     const [applications, setApplications] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/loan')
+        fetch('https://morning-dusk-41374.herokuapp.com/loan')
             .then(res => res.json())
             .then(data => setApplications(data))
     }, [applications])
@@ -17,6 +17,7 @@ const Applications = () => {
                 <table className="table table-hover text-center">
                     <thead>
                         <tr>
+                            <th scope="col">SL No.</th>
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Phone</th>
@@ -25,11 +26,13 @@ const Applications = () => {
                             <th scope="col">Company Address</th>
                             <th scope="col">Loan Amount</th>
                             <th scope="col">Loan Tenure</th>
+                            <th scope="col">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            applications.map(application => <Application
+                            applications.map((application, index) => <Application
+                                index={index}
                                 key={application._id}
                                 application={application}
                             ></Application>)

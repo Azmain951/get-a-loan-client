@@ -41,7 +41,7 @@ const Form = () => {
     const handleFormSubmit = () => {
         console.log(formData);
 
-        fetch('http://localhost:5000/loan', {
+        fetch('https://morning-dusk-41374.herokuapp.com/loan', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

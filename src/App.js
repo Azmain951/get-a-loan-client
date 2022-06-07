@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
+import RequireAuth from './components/RequireAuth';
 
 function App() {
   return (
@@ -16,8 +17,16 @@ function App() {
       <div className="App">
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
-          <Route path='/loan-apply' element={<Form></Form>}></Route>
-          <Route path='/applications' element={<Applications></Applications>}></Route>
+          <Route path='/loan-apply' element={
+            <RequireAuth>
+              <Form></Form>
+            </RequireAuth>
+          }></Route>
+          <Route path='/applications' element={
+            <RequireAuth>
+              <Applications></Applications>
+            </RequireAuth>
+          }></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/register' element={<Register></Register>}></Route>
         </Routes>
